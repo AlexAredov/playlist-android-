@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/after"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundcolor"
+    tools:context=".After">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="14dp"
+        android:onClick="lick"
+        android:text="Exit"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font" />
+
+    <ListView
+        android:id="@+id/listview4"
+        android:layout_width="wrap_content"
+        android:layout_height="452dp"
+        android:layout_below="@+id/txt_example3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="24dp"
+
+        android:layout_marginEnd="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:layout_toEndOf="@+id/button3"
+        android:text="Friends"
+        android:onClick="but"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font" />
+
+    <TextView
+        android:id="@+id/txt_example3"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="87dp"
+        android:shadowColor="@color/text_shadow_white"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        android:text="HI"
+        android:textAlignment="center"
+        android:textColor="@color/grey_font"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/button4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="plus"
+        android:text="+"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font" />
+
+</RelativeLayout>
