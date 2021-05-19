@@ -213,7 +213,7 @@ public class Plus extends AppCompatActivity {
                 }
         );
         intent.putExtra("username", name);
-        Thread.sleep(50);
+        Thread.sleep(100);
         startActivity(intent);
     }
 }
