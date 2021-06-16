@@ -44,7 +44,7 @@ public class After extends AppCompatActivity {
 
         TextView text = findViewById(R.id.txt_example3);
         //TextView text2 = findViewById(R.id.textView2);
-        lv = findViewById(R.id.listview4);
+        lv = findViewById(R.id.listview5);
         text.setText("Hi " + user);
 
         View view = findViewById(R.id.after);
@@ -75,9 +75,10 @@ public class After extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //String selectedItem = (String) parent.getItemAtPosition(position);
-                Intent intent = new Intent(After.this, Plus.class);
+                Intent intent = new Intent(After.this, Change.class);
                 intent.putExtra("pos", Long.toString(parent.getItemIdAtPosition(position)));
                 intent.putExtra("name", user);
+
                 startActivity(intent);
             }
         });
@@ -105,5 +106,17 @@ public class After extends AppCompatActivity {
         startActivity(intent, options.toBundle());
     }
 
+    public void serves(View view) {
+        Intent intent = new Intent(After.this, Serves.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view, "robot");
+        intent.putExtra("name", user);
+        startActivity(intent, options.toBundle());
+    }
 
+    public void top(View view){
+        Intent intent = new Intent(After.this, Top.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view, "robot");
+        intent.putExtra("name", user);
+        startActivity(intent, options.toBundle());
+    }
 }

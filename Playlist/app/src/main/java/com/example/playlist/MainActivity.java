@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.playlist.Model.Person;
 import com.example.playlist.Network.Network;
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
@@ -69,15 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static String cryptWithMD5(String pass){
         try {
-            md = MessageDigest.getInstance("MD5");
-            byte[] passBytes = pass.getBytes();
-            md.reset();
-            byte[] digested = md.digest(passBytes);
-            StringBuffer sb = new StringBuffer();
-            for(int i=0;i<digested.length;i++){
-                sb.append(Integer.toHexString(0xff & digested[i]));
-            }
-            return sb.toString();
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(pass.getBytes());
+            return new BigInteger(1, md.digest()).toString(16);
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -105,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickk(View v){
         pass = password.getText().toString();
         pass = cryptWithMD5(pass);
+        pass = pass.replace("0", "");
         Network network = new Network();
         if (!name.getText().toString().isEmpty()  && !password.getText().toString().isEmpty()) {
             network.check(
@@ -124,11 +120,11 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent1);
                                 }
                                 else{
-                                    text.setText("Error");
+                                    //text.setText("Errora");
                                 }
                             }
                             else{
-                                text.setText("Error");
+                                //text.setText("Errors");
                             }
                         }
                     }

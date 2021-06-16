@@ -11,7 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Plus"></activity>
+        <activity android:name=".Top"></activity>
+        <activity android:name=".MI" />
+        <activity android:name=".Serves" />
+        <activity android:name=".Change" />
+        <activity android:name=".Plus" />
         <activity android:name=".Profile" />
         <activity android:name=".Friends" />
         <activity android:name=".MainActivity">

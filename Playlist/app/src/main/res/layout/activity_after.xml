@@ -9,6 +9,21 @@
     tools:context=".After">
 
     <Button
+        android:id="@+id/button9"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/button3"
+        android:onClick="serves"
+        android:text="Settings"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font" />
+
+    <Button
         android:id="@+id/button3"
         android:layout_width="120dp"
         android:layout_height="60dp"
@@ -22,19 +37,22 @@
         app:backgroundTint="@color/grey_font" />
 
     <ListView
-        android:id="@+id/listview4"
+        android:id="@+id/listview5"
         android:layout_width="wrap_content"
         android:layout_height="452dp"
         android:layout_below="@+id/txt_example3"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="65dp"
 
-        android:layout_marginEnd="33dp"
+        android:layout_marginEnd="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" >
+
+
+    </ListView>
 
     <Button
         android:id="@+id/button4"
@@ -42,12 +60,12 @@
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="13dp"
         android:layout_toEndOf="@+id/button3"
-        android:text="Friends"
         android:onClick="but"
+        android:text="Friends"
         android:textColor="@color/black"
         app:backgroundTint="@color/grey_font" />
 
@@ -58,9 +76,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="87dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="86dp"
         android:shadowColor="@color/text_shadow_white"
         android:shadowDx="0"
         android:shadowDy="0"
@@ -84,5 +102,21 @@
         android:text="+"
         android:textColor="@color/black"
         app:backgroundTint="@color/grey_font" />
+
+    <Button
+        android:id="@+id/button99"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="top"
+        android:text="Top"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font" />
+
 
 </RelativeLayout>

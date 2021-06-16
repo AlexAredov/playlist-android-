@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundcolor"
+    tools:context=".MI">
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:onClick="back"
+        android:text="Back"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:onClick="MI"
+        android:text="Services"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/grey_font"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="Music Instruments"
+        android:textColor="@color/grey_font"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="338dp"
+        android:layout_height="542dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/Uculele"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="Uculele"
+                    android:onClick="Uculele"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Uculele" />
+
+                <CheckBox
+                    android:id="@+id/Bangos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Bangos"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Bangos" />
+
+                <CheckBox
+                    android:id="@+id/Harmonica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Harmonica"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Harmonica" />
+
+                <CheckBox
+                    android:id="@+id/Bass_Guitar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Bass_Guitar"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Bass Guitar" />
+
+                <CheckBox
+                    android:id="@+id/Drums"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Drums"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Drums" />
+
+                <CheckBox
+                    android:id="@+id/Piano"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Piano"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Piano" />
+
+                <CheckBox
+                    android:id="@+id/Xylophone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Xylophone"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Xylophone" />
+
+                <CheckBox
+                    android:id="@+id/Kalimba"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Kalimba"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Kalimba" />
+
+                <CheckBox
+                    android:id="@+id/Clarinet"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/grey_font"
+                    android:onClick="Clarinet"
+                    android:text="Clarinet" />
+
+                <CheckBox
+                    android:id="@+id/Trombone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Trombone"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Trombone" />
+
+                <CheckBox
+                    android:id="@+id/Guitar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Guitar"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Guitar" />
+
+                <CheckBox
+                    android:id="@+id/Saxophone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Saxophone"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Saxophone" />
+
+                <CheckBox
+                    android:id="@+id/Steel_Tongue_Drum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/grey_font"
+                    android:onClick="Steel_Tongue_Drum"
+                    android:text="Steel Tongue Drum" />
+
+                <CheckBox
+                    android:id="@+id/Flute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Flute"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Flute" />
+
+                <CheckBox
+                    android:id="@+id/Theremin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Theremin"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Theremin" />
+
+                <CheckBox
+                    android:id="@+id/Harp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Harp"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Harp" />
+
+                <CheckBox
+                    android:id="@+id/Cello"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Cello"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Cello" />
+
+                <CheckBox
+                    android:id="@+id/Magix_Music_Maker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Magix_Music_Maker"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Magix Music Maker" />
+
+                <CheckBox
+                    android:id="@+id/Image_Line_FL_Studio_20"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Image_Line_FL_Studio_20"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Image-Line FL Studio 20" />
+
+                <CheckBox
+                    android:id="@+id/Native_Instruments_Maschine_2_MK3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Native_Instruments_Maschine_2_MK3"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Native Instruments Maschine 2 MK3" />
+
+                <CheckBox
+                    android:id="@+id/Propellerheads_Reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="Propellerheads_Reason"
+                    android:buttonTint="@color/grey_font"
+                    android:text="Propellerheads Reason+" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView199"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

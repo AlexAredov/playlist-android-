@@ -17,6 +17,7 @@ import com.example.playlist.Network.Network;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.security.AlgorithmParameters;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
@@ -54,17 +55,11 @@ public class RegistrActivity extends AppCompatActivity {
 
     public static String cryptWithMD5(String pass){
         try {
-            md = MessageDigest.getInstance("MD5");
-            byte[] passBytes = pass.getBytes();
-            md.reset();
-            byte[] digested = md.digest(passBytes);
-            StringBuffer sb = new StringBuffer();
-            for(int i=0;i<digested.length;i++){
-                sb.append(Integer.toHexString(0xff & digested[i]));
-            }
-            return sb.toString();
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(pass.getBytes());
+            return new BigInteger(1, md.digest()).toString(16);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(RegistrActivity.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -79,17 +74,8 @@ public class RegistrActivity extends AppCompatActivity {
         }
         String password = passwordBox.getText().toString();
         password = cryptWithMD5(password);
+        password = password.replace("0", "");
         Network network = new Network();
-
-        network.getUsers(new Handler(){
-            @Override
-            public void handleMessage(@NonNull Message msg) {
-                super.handleMessage(msg);
-                if (msg.obj != null) {
-
-                }
-            }
-        });
 
         Handler handler = new Handler() {
             @Override

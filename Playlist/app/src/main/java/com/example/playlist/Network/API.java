@@ -15,7 +15,7 @@ public interface API {
     Call<List<String>> getAll();
 
     @POST("add")
-    Call<Person> postPerson(@Body Person person);
+    Call<Person> postPerson(@Body String person);
 
     @GET("/check/{name}")
     Call<Person> checkp(@Path("name") String name);
@@ -37,5 +37,33 @@ public interface API {
 
     @POST("fr/{name}")
     Call<Void> addf(@Path("name") String name, @Body String s);
+
+    @POST("serves/{name}/{service}")
+    Call<Void> service(@Path("name") String name, @Path("service") String service);
+
+    @GET("/service/{name}")
+    Call<Person> serv(@Path("name") String name);
+
+    @POST("/mipost/{name}/{mi}")
+    Call<Void> mip(@Path("name") String name, @Path("mi") String mi);
+
+    @GET("/miget/{name}")
+    Call<Person> mig(@Path("name") String name);
+
+
+    @GET("spotify/{name}")
+    Call<List<String>> spotify(@Path("name") String name);
+
+    @GET("apple/{name}")
+    Call<List<String>> apple(@Path("name") String name);
+
+    @GET("vk/{name}")
+    Call<List<String>> vk(@Path("name") String name);
+
+    @GET("yandex/{name}")
+    Call<List<String>> yandex(@Path("name") String name);
+
+    @GET("/topsongs")
+    Call<List<String>> top();
 
 }

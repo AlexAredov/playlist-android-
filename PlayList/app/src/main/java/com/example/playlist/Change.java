@@ -25,7 +25,7 @@ import com.example.playlist.Network.Network;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Plus extends AppCompatActivity {
+public class Change extends AppCompatActivity {
 
     String[] items;
     ArrayList<String> listItems;
@@ -39,7 +39,8 @@ public class Plus extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plus);
+        setContentView(R.layout.activity_change);
+
         et = findViewById(R.id.editTextTextPersonName2);
 
         Bundle extras = getIntent().getExtras();
@@ -139,13 +140,47 @@ public class Plus extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(Plus.this, After.class);
+        Intent intent = new Intent(Change.this, After.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view, "robot");
         startActivity(intent, options.toBundle());
     }
 
+    public void delete(View view) throws InterruptedException {
+        Intent intent = new Intent(Change.this, After.class);
+        Network network = new Network();
+        network.songs(
+                name,
+                new Handler(){
+                    @Override
+                    public void handleMessage(@NonNull Message msg){
+                        super.handleMessage(msg);
+                        int k = 0;
+                        String[] subStr = null;
+                        String delimeter = ", ";
+                        subStr = msg.obj.toString().split(delimeter);
+                        for (int i = 0; i < subStr.length; i++){
+                            Log.e("myTag", subStr[i]);
+                            subStr[i] = subStr[i].replaceAll("\"", "");
+                            if (subStr[i].equals(et.getText().toString())){
+                                k = 1;
+                            }
+                        }
+                        listItems=new ArrayList<>(Arrays.asList(subStr));
+                        listItems.remove(Integer.parseInt(userName));
+                        String listString = String.join(", ", listItems);
+                        listString = listString.replaceAll("\"", "");
+                        network.addsongs(name, listString, new Handler());
+                    }
+                }
+        );
+        intent.putExtra("username", name);
+        Thread.sleep(100);
+        startActivity(intent);
+
+    }
+
     public void save(View view) throws InterruptedException {
-        Intent intent = new Intent(Plus.this, After.class);
+        Intent intent = new Intent(Change.this, After.class);
         Network network = new Network();
         network.songs(
                 name,
@@ -174,7 +209,7 @@ public class Plus extends AppCompatActivity {
                                     network.addsongs(name, listString, new Handler());
                                 }
                                 else{
-                                    Toast toast = Toast.makeText(Plus.this, "This song is already in your list!", Toast.LENGTH_LONG);
+                                    Toast toast = Toast.makeText(Change.this, "This song is already in your list!", Toast.LENGTH_LONG);
                                     toast.setGravity(Gravity.TOP, 0,160);
                                     toast.show();
                                 }
@@ -196,7 +231,7 @@ public class Plus extends AppCompatActivity {
                                     network.addsongs(name, listString, new Handler());
                                 }
                                 else{
-                                    Toast toast = Toast.makeText(Plus.this, "This song is already in your list!", Toast.LENGTH_LONG);
+                                    Toast toast = Toast.makeText(Change.this, "This song is already in your list!", Toast.LENGTH_LONG);
                                     toast.setGravity(Gravity.TOP, 0,160);
                                     toast.show();
                                 }
@@ -216,4 +251,6 @@ public class Plus extends AppCompatActivity {
         Thread.sleep(100);
         startActivity(intent);
     }
+
+
 }
